@@ -1,0 +1,378 @@
+fileFormatVersion: 2
+guid: a3afea4389d39cb4ea56d3a81ea00da5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: demon-attack-no-breath_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 134
+        height: 130
+      alignment: 9
+      pivot: {x: 0.33992237, y: 0.45058617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f8d090a9aedce4998c10a4cc35cab0
+      internalID: 966796789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-attack-no-breath_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 120
+        height: 163
+      alignment: 9
+      pivot: {x: 0.39786276, y: 0.36164328}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b761847939e5ac44a981fc3f1f35546
+      internalID: -597488318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-attack-no-breath_3
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 0
+        width: 106
+        height: 162
+      alignment: 9
+      pivot: {x: 0.3612475, y: 0.39710513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823be09bb752a9d4bbd61ae14d72b1c1
+      internalID: -992733400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-attack-no-breath_8
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 0
+        width: 97
+        height: 119
+      alignment: 9
+      pivot: {x: 0.47351924, y: 0.44614157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6afe9bcfecb3eac45aee6a347c02e7d3
+      internalID: 1034571654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-attack-no-breath_9
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 0
+        width: 94
+        height: 109
+      alignment: 9
+      pivot: {x: 0.50777256, y: 0.45708552}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d92ce0878d09f674a85fc66bdde2760b
+      internalID: -723060314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-attack-no-breath_10
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 0
+        width: 147
+        height: 98
+      alignment: 9
+      pivot: {x: 0.38193268, y: 0.5883074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40b0476a9c24dc489c113ebae2d86eb
+      internalID: -272118935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-attack-no-breath_12
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 0
+        width: 142
+        height: 90
+      alignment: 9
+      pivot: {x: 0.36618558, y: 0.63675535}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34e2804eac256743b682ef9feb3848e
+      internalID: -436605639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-attack-no-breath_22
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 0
+        width: 119
+        height: 86
+      alignment: 9
+      pivot: {x: 0.36753935, y: 0.6104756}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b089f5fb8824c1448abd6a4a5ba87b9
+      internalID: 1315751086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      demon-attack-no-breath_0: 966796789
+      demon-attack-no-breath_1: -1641671708
+      demon-attack-no-breath_10: -272118935
+      demon-attack-no-breath_11: 1388703370
+      demon-attack-no-breath_12: -436605639
+      demon-attack-no-breath_13: 1623843125
+      demon-attack-no-breath_14: -2073694570
+      demon-attack-no-breath_15: -403440662
+      demon-attack-no-breath_16: 1056077235
+      demon-attack-no-breath_17: 2040489389
+      demon-attack-no-breath_18: -1526829198
+      demon-attack-no-breath_19: 1257769863
+      demon-attack-no-breath_2: -597488318
+      demon-attack-no-breath_20: 1456459038
+      demon-attack-no-breath_21: -398346735
+      demon-attack-no-breath_22: 1315751086
+      demon-attack-no-breath_23: -1084246546
+      demon-attack-no-breath_24: -587867532
+      demon-attack-no-breath_25: 986875214
+      demon-attack-no-breath_26: -1147961436
+      demon-attack-no-breath_27: -1769612364
+      demon-attack-no-breath_28: -1984262229
+      demon-attack-no-breath_29: -687887567
+      demon-attack-no-breath_3: -992733400
+      demon-attack-no-breath_30: 553050015
+      demon-attack-no-breath_31: 289307104
+      demon-attack-no-breath_32: -50596062
+      demon-attack-no-breath_33: -1318358504
+      demon-attack-no-breath_34: -781633143
+      demon-attack-no-breath_35: -526664245
+      demon-attack-no-breath_36: -343757355
+      demon-attack-no-breath_37: -579323951
+      demon-attack-no-breath_38: 1829506299
+      demon-attack-no-breath_39: 1020704001
+      demon-attack-no-breath_4: -1656970208
+      demon-attack-no-breath_40: 824194947
+      demon-attack-no-breath_41: 2113371741
+      demon-attack-no-breath_42: 1209216968
+      demon-attack-no-breath_43: -107017111
+      demon-attack-no-breath_5: 1082612639
+      demon-attack-no-breath_6: -2078891605
+      demon-attack-no-breath_7: -2029021200
+      demon-attack-no-breath_8: 1034571654
+      demon-attack-no-breath_9: -723060314
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
