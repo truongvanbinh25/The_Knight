@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -135,6 +136,17 @@ public class Ghost : BaseEnemy
         playerManager.crouchSpeed = playerManager.tempCrouchSpeed * 0.5f;
     }
 
+    public void StopSlowEffect()
+    {
+        //Check if it not null
+        if (slowEffectGO != null)
+        {
+            slowEffectGO.SetActive(false);
+            playerManager.runSpeed = playerManager.tempRunSpeed;
+            playerManager.crouchSpeed = playerManager.tempCrouchSpeed;
+        }
+    }
+
     public void SideEffects() //Minus HP until this die
     {
         //Effect has countinute when the player in attack range
@@ -150,20 +162,9 @@ public class Ghost : BaseEnemy
         hpSlider.value = numberOfHeath;
     }
 
-    public void StopSlowEffect()
-    {
-        //Check if it not null
-        if (slowEffectGO != null)
-        {
-            playerManager.runSpeed = playerManager.tempRunSpeed;
-            playerManager.crouchSpeed = playerManager.tempCrouchSpeed;
-        }
-    }
-
     protected override void EndOfFrameDie()
     {
         StopSlowEffect();
-        gameManager.slowEffectPool.ReturnGameObjetToPool(slowEffectGO);
         base.EndOfFrameDie();
     }
 }

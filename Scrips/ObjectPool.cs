@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public List<GameObject> pool;
+    private List<GameObject> pool;
 
     public GameObject prefab;
     public int poolSize = 5;
 
+    public List<GameObject> _pool { get => pool; set => pool = value; }
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        pool = new List<GameObject>();
+        _pool = new List<GameObject>();
 
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject obj = Instantiate(prefab);
+            GameObject obj = Instantiate(prefab, transform);
             obj.SetActive(false);
-            pool.Add(obj);
+            _pool.Add(obj);
         }
     }
 
     public GameObject GetObjectFromPool()
     {
-        foreach (GameObject go in pool)
+        foreach (GameObject go in _pool)
         {
             if(!go.activeInHierarchy)
             {
@@ -32,9 +34,9 @@ public class ObjectPool : MonoBehaviour
             }
         }
 
-        GameObject obj = Instantiate(prefab);
+        GameObject obj = Instantiate(prefab, transform);
         obj.SetActive(false);
-        pool.Add(obj);
+        _pool.Add(obj);
         return obj;
     }
 

@@ -13,6 +13,7 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     protected PlayerManager playerManager;
+    protected List<Transform> points;
 
     protected enum MovementState { idle, run, attack, takeHit, death, shield }
     protected MovementState state;
@@ -22,7 +23,7 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     public float attackRange = 3f;
     public float speed = 2f;
     public float waitTime = 2.5f;
-    public Transform[] points;
+    public GameObject pointsParent;
 
     protected float tempSpeed;
 
@@ -64,7 +65,9 @@ public class BaseEnemy : MonoBehaviour, IEnemy
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
-        if(points.Length > 0)
+        points = new List<Transform>();
+        GetPoints();
+        if(points.Count > 0)
         {
             DirectionPointCaculate();
         }
@@ -102,6 +105,8 @@ public class BaseEnemy : MonoBehaviour, IEnemy
             }
         }
         
+        Debug.Log(Vector2.Angle(transform.position, points[currentPoint].position));
+
         UpdateAnimationState();
     }
 
@@ -116,6 +121,17 @@ public class BaseEnemy : MonoBehaviour, IEnemy
         Gizmos.DrawWireSphere(transform.position, DetectionRange);
     }
 
+    protected void GetPoints()
+    {
+        if(pointsParent != null)
+        {
+            foreach (Transform tf in pointsParent.transform)
+            {
+                points.Add(tf);
+            }
+        }
+    }
+
     //Chuyển tiếp điểm
     protected IEnumerator PointCaculate()
     {
@@ -124,7 +140,7 @@ public class BaseEnemy : MonoBehaviour, IEnemy
         yield return new WaitForSeconds(waitTime);
         
         currentPoint++;
-        if (currentPoint >= points.Length)
+        if (currentPoint >= points.Count)
         {
             currentPoint = 0;
         }

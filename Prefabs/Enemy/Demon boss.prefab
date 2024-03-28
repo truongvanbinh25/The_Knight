@@ -1132,12 +1132,10 @@ MonoBehaviour:
   attackRange: 8
   speed: 2
   waitTime: 1
-  points:
-  - {fileID: 5093640440484578636}
-  - {fileID: 2736942664750906508}
-  - {fileID: 1099349428290028482}
+  pointsParent: {fileID: 1066675720328351503}
   hpCanvas: {fileID: 0}
   hpSlider: {fileID: 936197276530641697}
+  offset: {x: 0, y: 0, z: 0}
   numberOfHeath: 20
   isAttacking: 0
   inDetectionRange: 0
@@ -1148,6 +1146,7 @@ MonoBehaviour:
   breathPrefab: {fileID: 8774834587772425612, guid: 4abf70cbe8ded7942bdadd09e8fd06c3, type: 3}
   breathSpeed: 4
   restPoint: {fileID: 7664776034033581080}
+  infoCanvas: {fileID: 0}
   fills: {fileID: 8444139075715163833}
   manaSlider: {fileID: 8222955269848709820}
   fireTotem: {fileID: 0}
@@ -1155,7 +1154,6 @@ MonoBehaviour:
   speedHealMana: 0.001
   isRepareAttack: 0
   cooldownTimeRepareAttack: 1.5
-  isDisable: 0
 --- !u!1 &5285905214375712413
 GameObject:
   m_ObjectHideFlags: 0

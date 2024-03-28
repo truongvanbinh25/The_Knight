@@ -465,14 +465,10 @@ MonoBehaviour:
   attackRange: 2.2
   speed: 4
   waitTime: 2.3
-  points:
-  - {fileID: 1115577506131308394}
-  - {fileID: 7440808231364986900}
-  - {fileID: 4319464711078903174}
-  - {fileID: 5489419079956782303}
-  - {fileID: 1454261472299176164}
+  pointsParent: {fileID: 5440752649144578981}
   hpCanvas: {fileID: 6384847321053372577}
   hpSlider: {fileID: 5310275685891043979}
+  offset: {x: 0, y: 0, z: 0}
   numberOfHeath: 4
   isAttacking: 0
   inDetectionRange: 0

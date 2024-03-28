@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector] public Animator animator;
     private SpriteRenderer spriteRenderer;
     private Collider2D collider2d;
+    public Collider2D _collider2d { get => collider2d; }
     private bool isDisable = false;
 
     private enum MovementState { idle, running, jumping, falling, crouching, crouchwalk, attack, crouchAttack, takeHit, deadth, slide }
@@ -61,7 +62,6 @@ public class PlayerManager : MonoBehaviour
     public bool isSliding = false;
     public float slideSpeed = 5f;
     public float movementSliding = 0f;
-
     private Vector2 vecGravity;
     private int direction = 1;
 
@@ -71,6 +71,12 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Canvas")]
     public PlayerLifeCanvas playerLifeCanvas;
+
+    [Header("Effects")]
+    public GameObject dashEffect;
+    public GameObject smokeEffect;
+    private SpriteRenderer dashSR;
+    public bool isSmoke = false;
 
     //Setting
     private float speed;
@@ -94,6 +100,9 @@ public class PlayerManager : MonoBehaviour
         playerLifeCanvas = PlayerLifeCanvas.instante;
         tempRunSpeed = runSpeed;
         tempCrouchSpeed = crouchSpeed;
+
+        //Effects
+        dashSR = dashEffect.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -149,6 +158,11 @@ public class PlayerManager : MonoBehaviour
     {
         ////Run
         //horizontal = Input.GetAxis("Horizontal"); //not fit to sliding
+        if(Input.GetKeyDown(KeyCode.D) && isGrounded() || Input.GetKeyDown(KeyCode.A) && isGrounded())
+        {
+            dashEffect.SetActive(true);
+        }
+
 
         if(Input.GetKey(KeyCode.D))
         {
@@ -165,11 +179,11 @@ public class PlayerManager : MonoBehaviour
                 }    
             }    
         }
-
         if(Input.GetKeyUp(KeyCode.D))
         {
             horizontal = 0;
         }
+
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -200,12 +214,14 @@ public class PlayerManager : MonoBehaviour
         {
             state = MovementState.running;
             spriteRenderer.flipX = false;
+            dashSR.flipX = false; //Effect
             direction = 1;
         }
         else if (horizontal < 0)
         {
             state = MovementState.running;
             spriteRenderer.flipX = true;
+            dashSR.flipX = true; //Effect
             direction = -1;
         }
         else
@@ -225,6 +241,12 @@ public class PlayerManager : MonoBehaviour
             {
                 rb.velocity += Vector2.down * fallMultiplier * Time.deltaTime;
                 state = MovementState.falling;
+                if(isGrounded())
+                {
+                    //Khi người chơi chạm đất thì sẽ điều chỉnh vị trí của smoke, x sẽ là vị trí của người chơi, y sẽ lấy vị trí người chơi trừ cho dài của box colider sẽ ra vị trí dưới chân
+                    smokeEffect.SetActive(true); 
+                    smokeEffect.transform.position = new Vector3(transform.position.x, transform.position.y - collider2d.bounds.extents.y, 0);
+                }
                 isCrouching = false;
             }
         }   
@@ -240,6 +262,12 @@ public class PlayerManager : MonoBehaviour
             {
                 rb.velocity += Vector2.down * fallMultiplier * Time.deltaTime;
                 state = MovementState.falling;
+                if (isGrounded())
+                {
+                    //Khi người chơi chạm đất thì sẽ điều chỉnh vị trí của smoke, x sẽ là vị trí của người chơi, y sẽ lấy vị trí người chơi trừ cho dài của box colider sẽ ra vị trí dưới chân
+                    smokeEffect.SetActive(true);
+                    smokeEffect.transform.position = new Vector3(transform.position.x, transform.position.y - collider2d.bounds.extents.y, 0);
+                }
                 isCrouching = false;
             }
         }

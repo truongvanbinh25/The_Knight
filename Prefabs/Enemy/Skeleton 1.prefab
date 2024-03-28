@@ -119,8 +119,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8170586118738996774}
-  - {fileID: 5892845057345889521}
-  - {fileID: 1339617956513372896}
+  - {fileID: 7678056446607321125}
   - {fileID: 3145291214935425020}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -148,12 +147,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3489435427168287387}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.43, y: -0.2199998, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.4299994, y: -0.21999979, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1729587441796387881}
+  m_Father: {fileID: 7678056446607321125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4928599583035616293
 GameObject:
@@ -254,12 +253,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5078425066683316129}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.45, y: -0.2199998, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.45, y: -0.21999979, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1729587441796387881}
+  m_Father: {fileID: 7678056446607321125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5167242071884616326
 GameObject:
@@ -563,6 +562,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740bfabf30c320943a05691293ffa1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6524450693306130253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7678056446607321125}
+  m_Layer: 0
+  m_Name: Points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7678056446607321125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524450693306130253}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5892845057345889521}
+  - {fileID: 1339617956513372896}
+  m_Father: {fileID: 1729587441796387881}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8615296317935192811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,11 +1045,10 @@ MonoBehaviour:
   attackRange: 3
   speed: 1.8
   waitTime: 2
-  points:
-  - {fileID: 5892845057345889521}
-  - {fileID: 1339617956513372896}
+  pointsParent: {fileID: 6524450693306130253}
   hpCanvas: {fileID: 5167242071884616326}
   hpSlider: {fileID: 905872949758195101}
+  offset: {x: 0, y: 0, z: 0}
   numberOfHeath: 10
   isAttacking: 0
   inDetectionRange: 0
