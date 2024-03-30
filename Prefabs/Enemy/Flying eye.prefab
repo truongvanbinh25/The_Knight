@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 713026956095903113}
   - component: {fileID: 463975563931357995}
   - component: {fileID: 1162852030814825426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flying eye
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -475,6 +475,7 @@ MonoBehaviour:
   isWating: 0
   playerTranforms: {fileID: 0}
   isTakeHit: 0
+  canItFly: 1
   isShield: 0
   mana: 1
   speedHealMana: 0.0015

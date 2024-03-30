@@ -77,7 +77,7 @@ public class Necromancer : BaseEnemy
     public override void Attack()
     {
         summon.gameObject.SetActive(true);
-        summon.transform.position = new Vector3(playerManager.transform.position.x, playerManager.transform.position.y - playerManager._collider2d.bounds.extents.y, 0);
+        summon.transform.position = new Vector3(playerManager.transform.position.x, playerManager.transform.position.y - playerManager._collider2d.bounds.extents.y + 0.1f, 0);
         RandomEnemySummon();
     }
 
@@ -93,7 +93,7 @@ public class Necromancer : BaseEnemy
                 if(enemy.manaRequest == index)
                 {
                     MinusMana(index);
-                    summon.StartSummon(enemy.enemyPrefab, summon.transform);
+                    summon.StartSummon(enemy.enemyPrefab);
                     break;
                 }
             }

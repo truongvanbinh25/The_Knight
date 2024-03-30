@@ -9,4 +9,25 @@ public class Goblin : BaseEnemy
     {
         base.Start();
     }
+
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    protected override void FixedUpdate()
+    {
+        if (!isGrounded())
+            return;
+        base.FixedUpdate();
+    }
+
+    //Check if ahead is ground then wayback another point
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Ground"))
+        {
+            StartCoroutine(PointCaculate());
+        }
+    }
 }

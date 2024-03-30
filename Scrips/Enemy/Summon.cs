@@ -6,9 +6,9 @@ public class Summon : MonoBehaviour
 {
     public Necromancer necromancer;
 
-    public void StartSummon(GameObject whichEnemy, Transform transform)
+    public void StartSummon(GameObject whichEnemy)
     {
-        Instantiate(whichEnemy, transform.position, transform.rotation);
+        Instantiate(whichEnemy, transform.position + new Vector3(0, 0.2f, 0), transform.rotation);
     }
 
     public void EndOfFrameSummon()

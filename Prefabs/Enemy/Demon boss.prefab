@@ -949,7 +949,7 @@ GameObject:
   - component: {fileID: 4850463861078274817}
   - component: {fileID: 8476724916711663178}
   - component: {fileID: 3325131736215677900}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Demon boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}

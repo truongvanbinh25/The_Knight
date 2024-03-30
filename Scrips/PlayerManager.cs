@@ -476,10 +476,7 @@ public class PlayerManager : MonoBehaviour
                 if(collider.CompareTag("Enemy"))
                 {
                     BaseEnemy enemy = collider.GetComponent<BaseEnemy>(); //Khi đối tượng trong phạm vi tấn công sẽ thực hiện tấn công
-                    if(!enemy.isShield)
-                    {
-                        enemy.TakeHit(direction);
-                    }
+                    enemy.TakeHit(direction);
                 }
             }
         }

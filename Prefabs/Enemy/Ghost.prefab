@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 2005534330091037180}
   - component: {fileID: 7549336273203694750}
   - component: {fileID: 1555902792163380375}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ MonoBehaviour:
   attackRange: 10
   speed: 2
   waitTime: 2.5
-  points: []
+  pointsParent: {fileID: 0}
   hpCanvas: {fileID: 6633943795867888875}
   hpSlider: {fileID: 160914855132447988}
   offset: {x: 0, y: 0.5, z: 0}
@@ -329,6 +329,7 @@ MonoBehaviour:
   isWating: 0
   playerTranforms: {fileID: 0}
   isTakeHit: 0
+  canItFly: 1
   isShield: 0
   isApear: 0
   slowEffectGO: {fileID: 0}

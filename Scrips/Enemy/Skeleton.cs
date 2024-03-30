@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Skeleton : BaseEnemy
 {
+    [Header("Skeleton")]
     public float shieldTime = 10f;
     public float shieldSpeed = 1f;
     
@@ -40,6 +41,15 @@ public class Skeleton : BaseEnemy
         
     }
 
+    protected override void FixedUpdate()
+    {
+        if (!isGrounded())
+        {
+            return;
+        }
+        base.FixedUpdate();
+    }
+
     private void MinusMana()
     {
         shieldTime -= Time.deltaTime;
@@ -55,5 +65,14 @@ public class Skeleton : BaseEnemy
     private void EndOfFrameShield()
     {
         //isShield = false;
+    }
+
+    //Check if ahead is ground then wayback another point
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ground"))
+        {
+            StartCoroutine(PointCaculate());
+        }
     }
 }

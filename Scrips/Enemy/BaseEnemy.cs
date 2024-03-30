@@ -24,6 +24,7 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     public float speed = 2f;
     public float waitTime = 2.5f;
     public GameObject pointsParent;
+    public BoxCollider2D _boxCol { get => boxCol; }
 
     protected float tempSpeed;
 
@@ -45,8 +46,10 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     protected int currentPoint = 0;
     protected Vector2 moveDirection;
 
-    [Header("Skeleton")]
-    public bool isShield = false;
+    [Header("Special")]
+    public bool canItFly = false;
+
+    protected bool isShield = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -77,12 +80,22 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     protected virtual void Update()
     {
         hpCanvas.transform.position = transform.position + offset;
+        
+        if(!isGrounded() && !canItFly)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            return;
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        }
 
         //Nếu người chơi trong phạm vi tấn công
-        if(inDetectionRange)
+        if (inDetectionRange)
         {
             //Nếu va chạm với người chơi
-            if(Vector2.Distance(playerTranforms.transform.position, transform.position) < attackRange)
+            if (Vector2.Distance(playerTranforms.transform.position, transform.position) < attackRange)
             {
                 //Thực hiện việc tấn công
                 isAttacking = true; //Kích hoạt animation
@@ -99,13 +112,13 @@ public class BaseEnemy : MonoBehaviour, IEnemy
         }
         else
         {
-            if (!isWating && Vector2.Distance(points[currentPoint].transform.position, transform.position) < .1f)
+            float angle = Vector2.SignedAngle(Vector2.right, moveDirection);
+            if (!isWating && Vector2.Distance(points[currentPoint].transform.position, transform.position) < .1f || !isWating && angle >= 60 && angle <= 130 || !isWating && angle <= -60 && angle >= -130)
             {
+                Debug.Log("q");
                 StartCoroutine(PointCaculate());
             }
         }
-        
-        Debug.Log(Vector2.Angle(transform.position, points[currentPoint].position));
 
         UpdateAnimationState();
     }
@@ -223,15 +236,18 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     protected void EndOfFrameTakeHit()
     {
         isTakeHit = false; //Kết thúc animation
-        
+           
         //Trừ máu
         UpdateHealth();
     }
 
     public virtual void TakeHit(int directionHit)
     {
-        isTakeHit = true; //Kích hoạt animation
-        transform.position += new Vector3(1f * directionHit, 0, 0); //Khi người chơi tấn công thì sẽ lùi 1 đoạn là 1.5 về hướng quay của người chơi
+        if(!isShield) //Nếu đang bật khiêng thì bỏ qua
+        {
+            isTakeHit = true; //Kích hoạt animation
+            transform.position += new Vector3(1f * directionHit, 0, 0); //Khi người chơi tấn công thì sẽ lùi 1 đoạn là 1.5 về hướng quay của người chơi
+        }
     }
 
     protected virtual void UpdateHealth()
@@ -280,8 +296,13 @@ public class BaseEnemy : MonoBehaviour, IEnemy
         {
             inDetectionRange = false;
             playerTranforms = null;
-
             DirectionPointCaculate();
         }
     }
+
+    protected virtual bool isGrounded() // Kiểm tra va chạm với nền 
+    {
+        return Physics2D.OverlapBox(boxCol.bounds.center, boxCol.bounds.size, 0f, LayerMask.GetMask("Ground"));
+    }
+
 }
