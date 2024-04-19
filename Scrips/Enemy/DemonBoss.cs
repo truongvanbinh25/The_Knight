@@ -8,16 +8,15 @@ using UnityEngine.UI;
 
 public class DemonBoss : BaseEnemy
 {
-    private enum DemonMovementState { idle, prepareAttack, attack, takeHit }
+    private enum DemonMovementState { idle, prepareAttack, attack, takeHit, death }
     private DemonMovementState d_state;
+    private GameManager gameManager;
 
     [Header("Demon Boss")]
 
     [Header("Breath")]
     public GameObject breathPrefab;
     public float breathSpeed = 4f;
-
-    public Transform restPoint;
 
     [Header("Canvas")]
     public GameObject infoCanvas;
@@ -32,6 +31,16 @@ public class DemonBoss : BaseEnemy
     public float speedHealMana = 0.0001f;
     public bool isRepareAttack = false;
     public float cooldownTimeRepareAttack = 3f;
+    public Transform restPoint;
+
+    [Header("Death")]
+    public float timeDeath = 3f;
+
+    [Header("Effects")]
+    public GameObject explotionEffect;
+
+    [Header("Necromancer")]
+    public GameObject necromancerPrefab;
 
     private bool isDisable = false;
     private float tempHP;
@@ -45,6 +54,8 @@ public class DemonBoss : BaseEnemy
     protected override void Start()
     {
         base.Start();
+
+        gameManager = GameManager.instance;
 
         tempSpeed = speed;
 
@@ -92,6 +103,7 @@ public class DemonBoss : BaseEnemy
                         speed = 0;
                         spriteRenderer.flipX = false;
 
+                        //Healmana
                         StartCoroutine(HealFullMana()); 
                     }
                     else
@@ -161,6 +173,12 @@ public class DemonBoss : BaseEnemy
         if(isAttacking)
         {
             d_state = DemonMovementState.attack;
+        }
+
+        if(isDeath)
+        {
+            d_state = DemonMovementState.death;
+            speed = 0;
         }
 
         animator.SetInteger("state", (int)d_state);
@@ -241,7 +259,15 @@ public class DemonBoss : BaseEnemy
         speed = tempSpeed;
     }
 
-    public override void TakeHit(int directionHit)
+    protected override void EndOfFrameDie()
+    {
+        fireTotem.isDeadth = true;
+        
+        explotionEffect.SetActive(true);
+        explotionEffect.transform.position = transform.position;
+    }
+
+    public override void TakeHit(int directionHit, float pushoutValue)
     {
         if (isAttacking || isRepareAttack)
         {

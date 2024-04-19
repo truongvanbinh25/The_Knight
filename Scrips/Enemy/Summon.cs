@@ -8,7 +8,8 @@ public class Summon : MonoBehaviour
 
     public void StartSummon(GameObject whichEnemy)
     {
-        Instantiate(whichEnemy, transform.position + new Vector3(0, 0.2f, 0), transform.rotation);
+        GameObject enemy = Instantiate(whichEnemy, transform.position, transform.rotation);
+        enemy.transform.position = transform.position + new Vector3(0, enemy.GetComponentInChildren<BoxCollider2D>().size.y * 0.6f, 0);
     }
 
     public void EndOfFrameSummon()

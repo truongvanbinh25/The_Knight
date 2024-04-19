@@ -577,7 +577,7 @@ TextureImporter:
         width: 35
         height: 55
       alignment: 9
-      pivot: {x: 0.5, y: 0.35200694}
+      pivot: {x: 0.5, y: 0.3520069}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -765,8 +765,8 @@ TextureImporter:
         y: 101
         width: 34
         height: 84
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.490562, y: 0.23505919}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -786,8 +786,8 @@ TextureImporter:
         y: 101
         width: 31
         height: 86
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.22665139}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -807,8 +807,8 @@ TextureImporter:
         y: 101
         width: 42
         height: 85
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5379243, y: 0.23070419}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -828,8 +828,8 @@ TextureImporter:
         y: 101
         width: 53
         height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5210376, y: 0.23808402}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -849,8 +849,8 @@ TextureImporter:
         y: 101
         width: 57
         height: 84
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.48044038, y: 0.2329572}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -870,8 +870,8 @@ TextureImporter:
         y: 101
         width: 35
         height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5000017, y: 0.41422224}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -888,11 +888,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 15
-        y: 101
+        y: 102
         width: 35
         height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.50458515, y: 0.4436233}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

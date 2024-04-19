@@ -152,7 +152,7 @@ TextureImporter:
       name: demon-idle_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 20
         y: 17
         width: 134
         height: 124
@@ -170,7 +170,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-idle_2
+      name: demon-idle_1
       rect:
         serializedVersion: 2
         x: 164
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-idle_4
+      name: demon-idle_3
       rect:
         serializedVersion: 2
         x: 492
@@ -212,7 +212,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-idle_5
+      name: demon-idle_4
       rect:
         serializedVersion: 2
         x: 628
@@ -233,7 +233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-idle_6
+      name: demon-idle_5
       rect:
         serializedVersion: 2
         x: 804
@@ -254,7 +254,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-idle_8
+      name: demon-idle_2
       rect:
         serializedVersion: 2
         x: 333
@@ -286,17 +286,15 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       demon-idle_0: -1891359430
-      demon-idle_1: -419038287
+      demon-idle_1: -864185031
       demon-idle_10: -76561858
       demon-idle_11: -36494389
       demon-idle_12: 1696433906
-      demon-idle_2: -864185031
-      demon-idle_3: -1208600828
-      demon-idle_4: 322974955
-      demon-idle_5: -927771978
-      demon-idle_6: -1487958261
+      demon-idle_2: -1640316986
+      demon-idle_3: 322974955
+      demon-idle_4: -927771978
+      demon-idle_5: -1487958261
       demon-idle_7: -1254507487
-      demon-idle_8: -1640316986
       demon-idle_9: 1200361404
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

@@ -8,13 +8,14 @@ using UnityEngine.UI;
 
 public class FireTotem : MonoBehaviour
 {
-    private enum MovementState { idle, prepareHealMana, healMana, endHealMana, exit }
+    private enum MovementState { idle, healMana, exit }
     private MovementState state;
 
     [Header("Demon")]
     public DemonBoss demonBoss;
 
     public bool hasDemonOn = false;
+    public bool isDeadth = false;
 
     private Animator animator;
 
@@ -40,6 +41,16 @@ public class FireTotem : MonoBehaviour
             state = MovementState.healMana;
         }
 
+        if(isDeadth)
+        {
+            state = MovementState.exit;
+        }
+
         animator.SetInteger("state", (int)state);
+    }
+
+    private void EndOfFrameExit()
+    {
+        Destroy(gameObject);
     }
 }

@@ -158,7 +158,7 @@ public class Ghost : BaseEnemy
         }
 
         slowEffectGO.transform.position = playerManager.transform.position;
-        numberOfHeath -= Time.deltaTime;
+        numberOfHeath -= Time.deltaTime * 0.5f;
         hpSlider.value = numberOfHeath;
     }
 

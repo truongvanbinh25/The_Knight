@@ -94,9 +94,9 @@ public class FlyingEye : BaseEnemy
         speed = plungeSpeed;
     }
 
-    public override void TakeHit(int directionHit)
+    public override void TakeHit(int directionHit, float pushoutValue)
     {
-        base.TakeHit(directionHit);
+        base.TakeHit(directionHit, pushoutValue);
         isAttacking = false;
         isPlunge = false;
         MinusMana();

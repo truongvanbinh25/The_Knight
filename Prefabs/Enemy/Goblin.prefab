@@ -361,7 +361,7 @@ Transform:
   m_GameObject: {fileID: 5257139673427499896}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.21, y: 0.02, z: 0.106727}
+  m_LocalPosition: {x: 111.74219, y: -18.778744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 3981693811351641720}
   - component: {fileID: 1441532153824880027}
   - component: {fileID: 7268297728602023962}
+  - component: {fileID: 4897717775829092218}
   - component: {fileID: 47167069936128746}
   m_Layer: 7
   m_Name: Goblin
@@ -624,7 +625,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -639,7 +640,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -699,6 +700,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1458282, y: 0.5956278}
   m_EdgeRadius: 0
+--- !u!251 &4897717775829092218
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7771626204941013827}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 119
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!114 &47167069936128746
 MonoBehaviour:
   m_ObjectHideFlags: 0

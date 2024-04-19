@@ -1,13 +1,14 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class EnemySummon
+public class EnemiesSummon
 {
     public float manaRequest;
-    public GameObject enemyPrefab;
+    public List<GameObject> enemiesPrefab;
 }
 
 public class Necromancer : BaseEnemy
@@ -17,14 +18,14 @@ public class Necromancer : BaseEnemy
     [Header("Mana")]
     public Slider manaSlider;
     public float mana;
+    public float healManaSpeed = 0.2f;
     private float tempMana;
 
     [Header("Summon")]
     public Summon summon;
     public bool isSummoning = false;
-    public List<EnemySummon> enemiesSummon;
-   
-
+    public List<EnemiesSummon> enemiesSummon;
+ 
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -84,16 +85,26 @@ public class Necromancer : BaseEnemy
     private void RandomEnemySummon()
     {
         int index;
-        if(mana >= 1)
+        if (mana >= 1)
         {
-            index = (int)Random.Range(1, mana);
-            Debug.Log(index);
-            foreach(EnemySummon enemy in enemiesSummon)
+            float maxManaRequest = enemiesSummon.Last().manaRequest; // lấy phần tử có manarequest lớn nhất
+
+            if(mana > maxManaRequest)
             {
-                if(enemy.manaRequest == index)
+                index = (int)Random.Range(1, maxManaRequest);
+            }
+            else
+            {
+                index = (int)Random.Range(1, mana);
+            }
+
+            foreach (EnemiesSummon enemies in enemiesSummon)
+            {
+                if (enemies.manaRequest == index)
                 {
                     MinusMana(index);
-                    summon.StartSummon(enemy.enemyPrefab);
+                    int enemyIndex = Random.Range(0, enemies.enemiesPrefab.Count);
+                    summon.StartSummon(enemies.enemiesPrefab[enemyIndex]);
                     break;
                 }
             }
@@ -105,7 +116,7 @@ public class Necromancer : BaseEnemy
     {
         if(mana >= tempMana)
         {
-            mana += Time.deltaTime * 0.03f;
+            mana += Time.deltaTime * healManaSpeed;
             manaSlider.value = mana;
         }
     }

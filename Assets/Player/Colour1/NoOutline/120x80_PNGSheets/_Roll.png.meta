@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -152,10 +152,10 @@ TextureImporter:
       name: _Roll_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 120
-        height: 80
+        x: 51
+        y: 2
+        width: 22
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: _Roll_1
       rect:
         serializedVersion: 2
-        x: 120
-        y: 0
-        width: 120
-        height: 80
+        x: 164
+        y: 6
+        width: 35
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: _Roll_2
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
-        width: 120
-        height: 80
+        x: 523
+        y: 13
+        width: 40
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: _Roll_3
       rect:
         serializedVersion: 2
-        x: 360
-        y: 0
-        width: 120
-        height: 80
+        x: 642
+        y: 8
+        width: 42
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: _Roll_4
       rect:
         serializedVersion: 2
-        x: 480
+        x: 768
         y: 0
-        width: 120
-        height: 80
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,10 +257,10 @@ TextureImporter:
       name: _Roll_5
       rect:
         serializedVersion: 2
-        x: 600
+        x: 894
         y: 0
-        width: 120
-        height: 80
+        width: 21
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,55 +275,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _Roll_6
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 0
-        width: 120
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d87bb413cd50db418329925c1d54261
-      internalID: -1341137431
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _Roll_7
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 0
-        width: 120
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4ccc4b8561425045bf5f7839d3a526e
-      internalID: 1555305714
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: _Roll_8
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
-        width: 120
-        height: 80
+        x: 284
+        y: 9
+        width: 39
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,10 +299,10 @@ TextureImporter:
       name: _Roll_9
       rect:
         serializedVersion: 2
-        x: 1080
-        y: 0
-        width: 120
-        height: 80
+        x: 403
+        y: 13
+        width: 41
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,10 +320,10 @@ TextureImporter:
       name: _Roll_10
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 1016
         y: 0
-        width: 120
-        height: 80
+        width: 23
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,13 +338,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _Roll_11
+      name: _Roll_13
       rect:
         serializedVersion: 2
-        x: 1320
+        x: 1130
         y: 0
-        width: 120
-        height: 80
+        width: 24
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,8 +352,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38674e84341785b458f460c222b2c361
-      internalID: 1756514303
+      spriteID: 9297f6385da13594d96a692d4f389fb6
+      internalID: 648903245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Roll_14
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 0
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f06cc434e75cb849a7e458e46296fee
+      internalID: -1789801147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _Roll_15
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 0
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490a4f538da1c7d46aede532a463075b
+      internalID: 421278920
       vertices: []
       indices: 
       edges: []
@@ -415,6 +415,10 @@ TextureImporter:
       _Roll_1: -1546599039
       _Roll_10: 1264512486
       _Roll_11: 1756514303
+      _Roll_12: 335949543
+      _Roll_13: 648903245
+      _Roll_14: -1789801147
+      _Roll_15: 421278920
       _Roll_2: 864931972
       _Roll_3: -388867458
       _Roll_4: -1431414765

@@ -21,6 +21,7 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     [Header("General")]
     public float DetectionRange = 6f;
     public float attackRange = 3f;
+    public bool isDeath = false; //Kích hoạt animation Death
     public float speed = 2f;
     public float waitTime = 2.5f;
     public GameObject pointsParent;
@@ -42,9 +43,9 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     public Transform playerTranforms;
 
     public bool isTakeHit = false; //Kích hoạt animation TakeHit
-    protected bool isDeath = false; //Kích hoạt animation Death
+    
     protected int currentPoint = 0;
-    protected Vector2 moveDirection;
+    protected Vector2 moveDirection = new Vector2();
 
     [Header("Special")]
     public bool canItFly = false;
@@ -56,6 +57,13 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     {
         playerManager = PlayerManager.instance;
 
+        //Components
+        rb = GetComponent<Rigidbody2D>();
+        boxCol = GetComponent<BoxCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+
+        //Slider
         hpSlider.maxValue = numberOfHeath;
         hpSlider.value = numberOfHeath;
 
@@ -63,11 +71,7 @@ public class BaseEnemy : MonoBehaviour, IEnemy
         
         tempSpeed = speed;
 
-        rb = GetComponent<Rigidbody2D>();
-        boxCol = GetComponent<BoxCollider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-
+        //Points
         points = new List<Transform>();
         GetPoints();
         if(points.Count > 0)
@@ -84,6 +88,10 @@ public class BaseEnemy : MonoBehaviour, IEnemy
         if(!isGrounded() && !canItFly)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            //Set points follow player if player fall
+            pointsParent.transform.position = new Vector3(pointsParent.transform.position.x, transform.position.y, 0);
+
             return;
         }
         else
@@ -112,10 +120,8 @@ public class BaseEnemy : MonoBehaviour, IEnemy
         }
         else
         {
-            float angle = Vector2.SignedAngle(Vector2.right, moveDirection);
-            if (!isWating && Vector2.Distance(points[currentPoint].transform.position, transform.position) < .1f || !isWating && angle >= 60 && angle <= 130 || !isWating && angle <= -60 && angle >= -130)
+            if (!isWating && Vector2.Distance(points[currentPoint].transform.position, transform.position) < .4f)
             {
-                Debug.Log("q");
                 StartCoroutine(PointCaculate());
             }
         }
@@ -171,6 +177,13 @@ public class BaseEnemy : MonoBehaviour, IEnemy
     //Tính hướng đến player
     protected void DirectionPlayerCaculate()
     {
+        //If enemy walker follow player and go beyond the boundary then set points follow enemy
+        if(!canItFly)
+        {
+            pointsParent.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        }
+        
+        //Change direction to player
         moveDirection = (playerTranforms.transform.position - transform.position).normalized;
     }
 
@@ -241,12 +254,12 @@ public class BaseEnemy : MonoBehaviour, IEnemy
         UpdateHealth();
     }
 
-    public virtual void TakeHit(int directionHit)
+    public virtual void TakeHit(int directionHit, float pushoutValue)
     {
         if(!isShield) //Nếu đang bật khiêng thì bỏ qua
         {
             isTakeHit = true; //Kích hoạt animation
-            transform.position += new Vector3(1f * directionHit, 0, 0); //Khi người chơi tấn công thì sẽ lùi 1 đoạn là 1.5 về hướng quay của người chơi
+            transform.position += new Vector3(pushoutValue * directionHit, 0, 0); //Khi người chơi tấn công thì sẽ lùi 1 đoạn là 1.5 về hướng quay của người chơi
         }
     }
 
