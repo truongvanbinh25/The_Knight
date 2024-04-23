@@ -44,6 +44,7 @@ public class BagCanvas : BaseCanvas
                 if (gameObject.activeSelf == true)
                 {
                     gameObject.SetActive(false);
+                    InfomationItem.instance.gameObject.SetActive(false);
                 }
             }
         }

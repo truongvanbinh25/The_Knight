@@ -7,7 +7,7 @@ public class ItemBase : MonoBehaviour
 {
     protected enum eKindOfItem { hp, mana }
     public string nameItem;
-    public Sprite iconSprite;
+    [HideInInspector] public Sprite iconSprite;
     public string description;
     public string kindOfItem;
 

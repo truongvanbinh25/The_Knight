@@ -1,21 +1,30 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class ItemBox : MonoBehaviour
 {
+    private InfomationItem infomationItem;
+    private ItemsBag bag;
+
+    [Header("Item")]
     public ItemBase item;
     public Image iconImage;
     public TextMeshProUGUI quantityText;
     public int itemQuantity = 0;
 
+    public int positionInBag = 0;
     public bool isEmpty = true;
 
     private void Start()
     {
+        infomationItem = InfomationItem.instance;
+        bag = ItemsBag.instance;
+
         quantityText.gameObject.SetActive(false);
     }
 
@@ -29,6 +38,15 @@ public class ItemBox : MonoBehaviour
         iconImage.color = color;
     }
 
+    public void UnloadIcon()
+    {
+        //Icon
+        iconImage.sprite = null;
+        Color color = iconImage.color;
+        color.a = 0;
+        iconImage.color = color;
+    }
+
     public void LoadText()
     {
         //Text
@@ -36,22 +54,20 @@ public class ItemBox : MonoBehaviour
         quantityText.text = "x" + itemQuantity;
     }
 
-    public void DeleteItem()
+    public void LoadInfomationItem()
     {
-        item = null;
-        isEmpty = true;
-
-        //Icon
-        iconImage.sprite = null;
-        Color color = iconImage.color;
-        color.a = 0;
-        iconImage.color = color;
-
-        //Quantity text
-        quantityText.gameObject.SetActive(false);
+        if(item != null && !infomationItem.gameObject.activeSelf)
+        {
+            infomationItem.gameObject.SetActive(true);
+            infomationItem.UpdateInfomationItem(this);
+        }
+        else
+        {
+            infomationItem.gameObject.SetActive(false);
+        } 
     }
 
-    public void UseEffectBTN()
+    public void UseItem()
     {
         if (itemQuantity > 0)
         {
@@ -59,12 +75,21 @@ public class ItemBox : MonoBehaviour
 
             itemQuantity--;
             LoadText();
-
             if(itemQuantity <= 0)
             {
                 DeleteItem();
             }
-            
         }
+    }
+
+    public void DeleteItem()
+    {
+        item = null;
+        isEmpty = true;
+
+        UnloadIcon();
+
+        //Quantity text
+        quantityText.gameObject.SetActive(false);
     }
 }
