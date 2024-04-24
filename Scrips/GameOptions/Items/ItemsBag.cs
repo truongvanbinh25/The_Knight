@@ -30,7 +30,7 @@ public class ItemsBag : MonoBehaviour
     public ScrollRect viewScrollRect;
 
     //Move item
-    private float timeHold = 0.12f;
+    private float timeHold = 0.1f;
     private float tempTime = 0;
 
     private void Awake()
@@ -41,8 +41,6 @@ public class ItemsBag : MonoBehaviour
     private void Start()
     {
         GetItems();
-
-        gameObject.SetActive(false);
     }
 
     private void Update()
@@ -55,9 +53,15 @@ public class ItemsBag : MonoBehaviour
             tempTime += Time.deltaTime;
             if(tempTime > timeHold)
             {
-                viewScrollRect.vertical = false;
-                whichItemSwap = GetItemAtPosition(Input.mousePosition); 
                 
+                whichItemSwap = GetItemAtPosition(Input.mousePosition);
+                if (whichItemSwap != null && whichItemSwap.isEmpty)
+                {
+                    whichItemSwap = null;
+                    tempTime = 0;
+                    return;
+                }
+                viewScrollRect.vertical = false;
             }
         }
 
@@ -87,7 +91,7 @@ public class ItemsBag : MonoBehaviour
             tempImageSwap.gameObject.SetActive(false);
         }
         
-        if (whichItemSwap != null)
+        if (whichItemSwap != null && !whichItemSwap.isEmpty)
         {
             //Load icon item vào trong tempimage để người dùng dễ nhìn
             tempImageSwap.gameObject.SetActive(true);

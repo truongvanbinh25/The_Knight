@@ -30,12 +30,16 @@ public class ItemBox : MonoBehaviour
 
     public void LoadIcon()
     {
-        //Icon
-        iconImage.sprite = item.iconSprite;
+        if (item != null)
+        {
+            //Icon
+            iconImage.sprite = item.iconSprite;
         
-        Color color = iconImage.color;
-        color.a = 1;
-        iconImage.color = color;
+            Color color = iconImage.color;
+            color.a = 1;
+            iconImage.color = color;
+        }
+        
     }
 
     public void UnloadIcon()

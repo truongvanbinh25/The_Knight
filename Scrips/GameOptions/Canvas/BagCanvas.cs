@@ -32,6 +32,8 @@ public class BagCanvas : BaseCanvas
         GetViewsRectTransform();
 
         buttonsList[0].rectTransform.localScale = buttonsList[0].scaleChange;
+
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
